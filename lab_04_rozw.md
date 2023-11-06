@@ -19,3 +19,5 @@ SELECT * FROM osoba
 ```
 
 Kod umieszczamy liniowo, Polecenie ```SELECT``` oznacza wybranie danych
+
+BazY_23_**A

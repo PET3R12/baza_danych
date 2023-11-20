@@ -61,3 +61,33 @@ create table zwierz (id int primary key auto_increment, nazwa varchar(40), wiek 
 insert into zwierz
 
 ```
+
+
+
+n = int(input("podaj n: "))
+#a)
+def l_mn(n):
+    mniejsze = [liczba for liczba in range(n)]
+    return mniejsze
+print(l_mn(n))
+
+#b)
+#c)
+def dzielniki(n):
+    wynik = []
+    for i in range(1,int(n/2+1)):
+        if n % i == 0:
+            wynik.append(i)
+    return wynik
+print(dzielniki(n))
+
+def suma(lista):
+    wynik = 0
+    for liczba in lista:
+        wynik += liczba
+    return wynik
+
+def czy_doskonala(n):
+    dc = dzielniki(n)
+    su = suma(dc)
+    return su == n

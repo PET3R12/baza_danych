@@ -1,0 +1,63 @@
+```sql
+#zadanie_3_20.11.2023
+#a)
+
+select * from postac where nazwa LIKE "%a%";
+update postac set statek= "Santa Maria" where nazwa like "%a%";
+select * from postac where nazwa LIKE "_j%";
+select * from postac where nazwa regexp '[0-9]{1,2}-[0-9]{3}';
+#[0-9] dowolna liczba ze zbioru
+#[a-k] - litery ze zbioru
+# {n} - dokładnie n razy
+#{n,m} - co najmniej n razy, max m razy
+select * from statek where data_wodowania between '1901-01-01' and '2000-12-31';
+select * from statek where year(data_wodowania) between 1901 and 2000;
+select day(now());
+select now();
+#curdate
+
+#b)
+update statek set max_ladownosc = 0.7 * max_ladownosc where year(data_wodowania) between 1901 and 2000;
+
+#c)_check
+alter table postac modify wiek int unsigned check (wiek < 1000);
+alter table postac add check (wiek < 1000);
+show create table postac;
+select * from postac;
+update postac set wiek = 1000 where nazwa = "Drozd";
+
+#zad_4
+#a)
+alter table postac modify column rodzaj enum('wiking','ptak','kobieta','waz');
+insert into postac(nazwa, rodzaj) values('Loko', 'waz');
+show create table postac;
+
+#b)
+create table marynaz like postac;
+insert into marynaz select * from postac where statek is not null ;
+select * from marynaz;
+show create table postac;
+show create table marynaz;
+
+#c)
+
+#zad_5
+#a)
+#b)
+select * from postac;
+delete from postac where id_postaci = 8;
+show tables;
+
+#c)
+delete from statek;
+
+#d)
+drop table statek;
+
+#e)
+create table zwierz (id int primary key auto_increment, nazwa varchar(40), wiek int);
+
+#f)
+insert into zwierz
+
+```

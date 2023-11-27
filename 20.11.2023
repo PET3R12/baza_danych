@@ -1,7 +1,7 @@
-```sql
+
 #zadanie_3_20.11.2023
 #a)
-
+```sql
 select * from postac where nazwa LIKE "%a%";
 update postac set statek= "Santa Maria" where nazwa like "%a%";
 select * from postac where nazwa LIKE "_j%";
@@ -15,7 +15,7 @@ select * from statek where year(data_wodowania) between 1901 and 2000;
 select day(now());
 select now();
 #curdate
-
+```
 #b)
 update statek set max_ladownosc = 0.7 * max_ladownosc where year(data_wodowania) between 1901 and 2000;
 

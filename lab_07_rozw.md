@@ -68,5 +68,9 @@ where k.rodzaj not in ('waz', 'malpa') and e.ilosc < 30 group by k.rodzaj;
 ```
 * 2
 ```sql
-
+select 'najmlodsza',a.maxData,b.nazwa, a.rodzaj from (select max(dataUr) maxData,rodzaj from kreatura group by  rodzaj) a,
+(select nazwa,dataUr from kreatura) b where a.maxData = b.dataUr
+union
+select 'najstarsza',a.minData,b.nazwa,a.rodzaj from (select min(dataUr) minData, rodzaj from kreatura group by rodzaj) a,
+(select nazwa,dataUr from kreatura) b where a.minData=b.dataUr;
 ```

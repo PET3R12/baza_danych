@@ -15,7 +15,7 @@ inner join klient k on k.id_klienta = z.klient
 group by z.id_zamowienia
 order by wartosc desc limit 10;
 ```
-### Zad 7
+### Zad 3
 ```sql
 select year(z.data_zamowienia), sum(sm.ilosc * pz.cena) - sum(t.cena_zakupu * pz.ilosc) as dochod
 from pozycja_zamowienia pz

@@ -17,12 +17,10 @@ order by wartosc desc limit 10;
 ```
 ### Zad 3
 ```sql
-select year(z.data_zamowienia), sum(sm.ilosc * pz.cena) - sum(t.cena_zakupu * pz.ilosc) as dochod
-from pozycja_zamowienia pz
-inner join zamowienie z on z.id_zamowienia = pz.zamowienie
-inner join towar t on t.id_towaru = pz.towar
-inner join stan_magazynowy sm on sm.towar = t.id_towaru
-group by year(z.data_zamowienia);
+select year(z.data_zamowienia) as rok, sum(pz.ilosc * pz.cena) as przychod
+from zamowienie z 
+inner join pozycja_zamowienia pz on z.id_zamowienia = pz.zamowienie
+group by rok;
 ```
 ### Zad 4
 ```sql

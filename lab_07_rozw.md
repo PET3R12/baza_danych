@@ -30,7 +30,10 @@ group by rodzaj having count(*)>1;
 ### Zadanie 3
 * 1
 ```sql
-select k.nazwa, e.ilosc from kreatura k inner join ekwipunek e on k.idKreatury = e.idKreatury; 
+select k.nazwa, sum(e.ilosc) as ilosc_zasobow
+from kreatura k 
+inner join ekwipunek e on e.idKreatury = k.idKreatury
+group by k.nazwa;
 ```
 * 2
 ```sql

@@ -16,7 +16,11 @@ select * from zasob where rodzaj = "jedzenie";
 ```
 * 4
 ```sql
-select ilosc from zasob where idZasobu in (1,3,5);
+select z.idZasobu, z.ilosc 
+from zasob z
+left join ekwipunek e on z.idZasobu = e.idZasobu
+left join kreatura k on k.idKreatury = e.idKreatury
+where k.idKreatury in (1, 3, 5);
 ```
 ### Zadanie 2
 * 1
@@ -47,7 +51,7 @@ select * from kreatura where dataUr is not null order by dataUr asc limit 5;
 ### Zadanie 4
 * 1
 ```sql
-select distinct rodzaj from kreatura;
+select distinct rodzaj from zasob;
 ```
 * 2
 ```sql
